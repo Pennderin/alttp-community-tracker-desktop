@@ -27,9 +27,12 @@
       document.addEventListener("DOMContentLoaded", (event) => {
         load_cookie();
         insertHeader();
+        var sel = document.getElementById("po-theme-select");
+        if (sel) sel.value = localStorage.getItem("poTheme") || "blue";
       });
       getNextLadderRace();
     </script>
+    <script src="js/po-themes.js"></script>
   </head>
 
   <body>
@@ -1196,6 +1199,16 @@
                 oninput="document.getElementById('markersizevalue').innerText = this.value + 'px'"
                 style="vertical-align: middle; width: 120px;" />
               <span id="markersizevalue" style="color: white; margin-left: 6px;">16px</span>
+            </span>
+            <span class="preset-span" style="margin-left: 12px;">
+              Theme:
+              <select id="po-theme-select" onchange="applyPoTheme(this.value)" style="width: auto !important; min-width: 80px;">
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+                <option value="purple">Purple</option>
+              </select>
             </span>
           </div>
           <div>

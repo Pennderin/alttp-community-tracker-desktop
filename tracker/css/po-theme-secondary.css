@@ -1,16 +1,29 @@
 /* ALTTPR PO Tracker - Secondary Window Theme */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap');
 
+/* ===== THEME COLOR VARIABLES ===== */
+:root {
+  --accent-color: #58a6ff;
+  --accent-hover: #79c0ff;
+  --accent-glow: rgba(88, 166, 255, 0.15);
+  --theme-bg: #0a0f1a;
+  --theme-panel: #0c1018;
+  --theme-input: #070b12;
+  --theme-border: #1a2744;
+  --theme-border-light: #1e2d4a;
+  --theme-header-bg: #060a12;
+}
+
 /* ===== BASE ===== */
 html {
-  background-color: #0d1117 !important;
+  background-color: var(--theme-bg) !important;
 }
 
 body {
   font-family: 'Outfit', sans-serif !important;
   font-size: 13px !important;
   background-image: none !important;
-  background-color: #0d1117 !important;
+  background-color: var(--theme-bg) !important;
   color: #e6edf3 !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -22,12 +35,12 @@ div {
 }
 
 a {
-  color: #58a6ff !important;
+  color: var(--accent-color) !important;
   text-decoration: none;
 }
 
 a:hover {
-  color: #79c0ff !important;
+  color: var(--accent-hover) !important;
   text-decoration: underline;
 }
 
@@ -55,10 +68,10 @@ a:hover {
   font-size: 13px !important;
   font-family: 'Outfit', sans-serif !important;
   font-variant: normal !important;
-  background-color: #161b22 !important;
+  background-color: var(--theme-panel) !important;
   color: #e6edf3 !important;
   padding: 16px 20px !important;
-  border-color: #30363d !important;
+  border-color: var(--theme-border) !important;
   border-width: 1px !important;
   border-style: solid !important;
   border-radius: 8px !important;
@@ -69,7 +82,7 @@ a:hover {
   margin-bottom: 8px !important;
   margin-top: 12px !important;
   padding-bottom: 6px !important;
-  border-bottom: 1px solid #21262d !important;
+  border-bottom: 1px solid var(--theme-border-light) !important;
 }
 
 .preset-header-div:first-child {
@@ -89,9 +102,9 @@ a:hover {
 button {
   font-family: 'JetBrains Mono', monospace !important;
   font-size: 11px !important;
-  background-color: #21262d !important;
+  background-color: var(--theme-border-light) !important;
   color: #c9d1d9 !important;
-  border: 1px solid #30363d !important;
+  border: 1px solid var(--theme-border) !important;
   border-radius: 6px !important;
   padding: 5px 12px !important;
   cursor: pointer !important;
@@ -101,7 +114,7 @@ button {
 }
 
 button:hover {
-  background-color: #30363d !important;
+  background-color: var(--theme-border) !important;
   color: #f0f6fc !important;
 }
 
@@ -121,7 +134,7 @@ button:hover {
 
 .logiccol > div {
   padding: 3px 0 !important;
-  border-bottom: 1px solid #21262d;
+  border-bottom: 1px solid var(--theme-border-light);
   display: flex !important;
   align-items: center !important;
 }
@@ -134,7 +147,7 @@ button:hover {
   font-family: 'Outfit', sans-serif !important;
   font-size: 12px !important;
   font-weight: 600 !important;
-  color: #58a6ff !important;
+  color: var(--accent-color) !important;
   text-decoration: underline !important;
   display: block !important;
   margin-bottom: 6px !important;
@@ -154,7 +167,7 @@ button:hover {
 }
 
 .logiccheckbox {
-  accent-color: #58a6ff !important;
+  accent-color: var(--accent-color) !important;
   margin-right: 6px !important;
   cursor: pointer;
 }
@@ -170,7 +183,7 @@ button:hover {
 }
 
 .tooltop-character:hover {
-  color: #58a6ff !important;
+  color: var(--accent-color) !important;
 }
 
 /* ===== COLOR SETTINGS ===== */
@@ -200,9 +213,9 @@ label {
 }
 
 input[type="color"] {
-  border: 1px solid #30363d !important;
+  border: 1px solid var(--theme-border) !important;
   border-radius: 4px !important;
-  background-color: #161b22 !important;
+  background-color: var(--theme-panel) !important;
   cursor: pointer;
 }
 
@@ -210,23 +223,23 @@ input[type="text"],
 input[type="number"] {
   font-family: 'JetBrains Mono', monospace !important;
   font-size: 12px !important;
-  background-color: #0d1117 !important;
+  background-color: var(--theme-input) !important;
   color: #c9d1d9 !important;
-  border: 1px solid #30363d !important;
+  border: 1px solid var(--theme-border) !important;
   border-radius: 4px !important;
   padding: 3px 6px !important;
 }
 
 input[type="range"] {
-  accent-color: #58a6ff !important;
+  accent-color: var(--accent-color) !important;
 }
 
 select {
   font-family: 'Outfit', sans-serif !important;
   font-size: 12px !important;
-  background-color: #0d1117 !important;
+  background-color: var(--theme-input) !important;
   color: #c9d1d9 !important;
-  border: 1px solid #30363d !important;
+  border: 1px solid var(--theme-border) !important;
   border-radius: 4px !important;
   padding: 3px 6px !important;
 }
@@ -238,11 +251,11 @@ select {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0d1117;
+  background: var(--theme-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #30363d;
+  background: var(--theme-border);
   border-radius: 4px;
 }
 
