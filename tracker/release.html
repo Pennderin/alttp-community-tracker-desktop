@@ -208,7 +208,7 @@
               <li>Aligned entrance labels in compact mode and hera/mire boss icons when using old map styling</li>
               <u>Logic Fixes</u
               ><br />
-              <li>Merged upstream logic updates (thanks BigDunka + Catobat) - I think I got all the OWR changes done properly, please let me know if something doesn't work as expected.</li>
+              <li>Merged upstream logic updates (upstream updates) - I think I got all the OWR changes done properly, please let me know if something doesn't work as expected.</li>
             </ul>
             <b><i>05/14/2024 Build 2.1.002 051424</i></b
             ><br />
@@ -216,7 +216,7 @@
               <u>Interface Changes</u
               ><br />
               <li>Fixed autotracking status position in all maps</li>
-              <li>Merged upstream style fixes (thanks BigDunka)</li>
+              <li>Merged upstream style fixes (upstream fixes)</li>
               <u>Logic Fixes</u
               ><br />
               <li>Fixed infinite loop issue in entrance with reaching EDM that cause tracker deadlocks</li>
@@ -226,7 +226,7 @@
             <ul>
               <u>Interface Changes</u
               ><br />
-              <li>Added vertical map layouts (Credit: BigDunka)</li>
+              <li>Added vertical map layouts (upstream)</li>
               You will find that the caption bar may not be visible, as the window is 1330px tall, and will only be usable on 1440p and 4k monitors. This is a sacrifice that needs to be made in order to make it fit on the screen and keep
               the proper sizing. We also recognize that some of the lines on the vertical layout with entrance may be slightly off.
               <li>Changed default autotracking port from 8080 to 23074 - no changes should be needed on the user side as both SNI and qusb2snes have always listened on this port</li>
@@ -791,7 +791,7 @@
             <b><i>10/14/2021 Build 1.7.001 101421</i></b
             ><br />
             <ul>
-              <li>We've updated our URL! Please note the new URL: <a href="https://alttprtracker.dunka.net">https://alttprtracker.dunka.net</a></li>
+              <li>URL has been updated.</li>
               The old URL will continue to work for a time and redirect to the new URL, and then will eventually be replaced permanently<br /><br />
               <li>A big thank you to Catobat for several of the following updates, notated by ** in the below notes</li>
               <u>Interface Changes</u
@@ -1497,7 +1497,7 @@
               <li>
                 Finalized rebuilding all of the dungeon logic for all available modes<br />
                 As per the previous announcement, there were several changes to the logic structure in regards to small keys in order to handle the new MCS shuffle mode. Because of this, the entire way that chest logic is handled was
-                redesigned. There are chances that some logic issues slipped through testing, and if you discover any, please let Dunka know via Discord @ @bigdunka.<br />
+                redesigned. There are chances that some logic issues slipped through testing, and if you discover any, please report any issues.<br />
                 Logic was redesigned to more closely match what is in the randomizer seeding and placement logic. Because of this, areas like Ice Palace, where the tracker would previously show available via bomb jump, that has since been
                 removed and the bomb jump is no longer in logic. Other areas, like Turtle Rock with small key shuffle, were redesigned to allow for max potential items for keys by logic, which means it will not count skipping the vanilla
                 big key location with only 3 small keys, making the boss not killable.<br />
@@ -1724,8 +1724,8 @@
             <ul>
               <li>
                 <b>STILL IN TESTING</b> Added Inverted + Keysanity logic<br />
-                NOTE: Turtle Rock is still fairly untested, as there are two different logic sets (front door and mirror entrances) using the best available options. Not all dungeons have been fully tested, please report issues to Dunka
-                (@bigdunka)
+                NOTE: Turtle Rock is still fairly untested, as there are two different logic sets (front door and mirror entrances) using the best available options. Not all dungeons have been fully tested, please report any issues
+                
               </li>
               <li>Disabled some of the Sequence Break logic, will reactivate after the toggle has been added</li>
               <li>Fixed the inverted + keysanity AGA 1 chests and opening logic</li>

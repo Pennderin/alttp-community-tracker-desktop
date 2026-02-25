@@ -1,7 +1,7 @@
 {
   "name": "alttp-randomizer-tracker",
-  "version": "2.2.9",
-  "description": "ALTTP Randomizer Community Tracker - Standalone Desktop App",
+  "version": "1.0.0",
+  "description": "ALTTP Randomizer Tracker - Standalone Desktop App",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -11,9 +11,9 @@
     "build": "electron-builder --win --mac --linux"
   },
   "build": {
-    "appId": "net.dunka.alttptracker",
+    "appId": "com.alttp.tracker",
     "productName": "ALTTP Randomizer Tracker",
-    "copyright": "ALTTP Randomizer Community",
+    "copyright": "ALTTP Randomizer Tracker",
     "directories": {
       "output": "dist"
     },

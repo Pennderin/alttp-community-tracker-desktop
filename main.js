@@ -37,12 +37,12 @@ savedTrackerZoom = initialSettings.zoom || null;
 
 function createMainWindow() {
   mainWindow = new BrowserWindow({
-    width: 1100,
-    height: 900,
-    minWidth: 800,
+    width: 720,
+    height: 850,
+    minWidth: 500,
     minHeight: 600,
-    title: 'ALTTP Randomizer Community Tracker',
-    icon: path.join(__dirname, 'tracker', 'images', 'icons', 'favicon-32x32.png'),
+    title: 'ALTTPR PO Tracker',
+    icon: path.join(__dirname, 'icon.ico'),
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: false,
@@ -50,11 +50,25 @@ function createMainWindow() {
       preload: path.join(__dirname, 'preload.js'),
       webSecurity: false,
     },
-    backgroundColor: '#1a1a2e',
+    backgroundColor: '#0d1117',
   });
 
   mainWindow.setMenuBarVisibility(false);
   mainWindow.loadFile(path.join(__dirname, 'tracker', 'index.html'));
+
+  // Scale content when window is resized using Electron's zoom
+  const BASE_WIDTH = 720;
+  mainWindow.on('resize', () => {
+    const [w] = mainWindow.getContentSize();
+    const scale = Math.max(0.5, Math.min(w / BASE_WIDTH, 1.5));
+    mainWindow.webContents.setZoomFactor(scale);
+  });
+
+  mainWindow.webContents.on('did-finish-load', () => {
+    const [w] = mainWindow.getContentSize();
+    const scale = Math.max(0.5, Math.min(w / BASE_WIDTH, 1.5));
+    mainWindow.webContents.setZoomFactor(scale);
+  });
 
   mainWindow.webContents.setWindowOpenHandler(({ url, features }) => {
     if (url.startsWith('http://') || url.startsWith('https://')) {
@@ -94,7 +108,7 @@ function createMainWindow() {
         maximizable: true,
         fullscreenable: true,
         title: 'ALTTP Tracker',
-        icon: path.join(__dirname, 'tracker', 'images', 'icons', 'favicon-32x32.png'),
+        icon: path.join(__dirname, 'icon.ico'),
         autoHideMenuBar: true,
         webPreferences: {
           nodeIntegration: false,

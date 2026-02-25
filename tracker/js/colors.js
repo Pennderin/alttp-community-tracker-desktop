@@ -56,7 +56,7 @@ const mikeColors = {
   "dam-color": "#ff7b00",
 };
 
-const dunkaColors = {
+const classicColors = {
   "prize-uncollected-color": "#00000",
   "prize-collected-color": "#000000",
   "available-color": "#00ff00",
@@ -162,7 +162,7 @@ const altColors = {
 
 const colorSets = {
   mike: mikeColors,
-  dunka: dunkaColors,
+  classic: classicColors,
   alt: altColors,
 };
 
@@ -226,8 +226,8 @@ const setAllColors = (preset) => {
     case "mike":
       colorSettings = mikeColors;
       break;
-    case "dunka":
-      colorSettings = dunkaColors;
+    case "classic":
+      colorSettings = classicColors;
       break;
     case "alt":
       colorSettings = altColors;

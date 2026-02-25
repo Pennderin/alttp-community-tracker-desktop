@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>ALTTP Randomizer Community Tracker - Color Settings</title>
+    <title>ALTTPR PO Tracker - Color Settings</title>
     <script type="text/javascript" src="js/jquery-3.3.1.js?v=20260131"></script>
     <script type="text/javascript" src="js/jquery.powertip.js?v=20260131"></script>
     <script type="text/javascript" src="js/bootstrap.min.js?v=20260131"></script>
@@ -15,9 +15,10 @@
     <link href="css/sprites.css?v=20260131" rel="stylesheet" />
     <link href="css/toast.css?v=20260131" rel="stylesheet" />
     <link href="css/style.css?v=20260131" rel="stylesheet" />
+    <link href="css/po-theme-secondary.css" rel="stylesheet" />
     <style>
       a {
-        color: red;
+        color: #58a6ff;
       }
     </style>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -63,7 +64,7 @@
             <span class="preset-header-text">Color Presets (Applied when selected)</span>
           </div>
           <button onclick="setAllColors('mike')">StructuralMike</button>
-          <button onclick="setAllColors('dunka')">Dunka</button>
+          <button onclick="setAllColors('classic')">Classic</button>
           <button onclick="setAllColors('alt')">Alternative</button><span class="south tooltop-character" title="This will load an alternate color scheme to assist with color-blind users"> [?]</span>
           <br />
           <button onclick="saveToDownload()">Save to file</button>
@@ -162,7 +163,9 @@
             <label for="dp-color">Desert Palace</label>
             <input class="input-color-picker" name="dp-color" type="color" data-id="dp-color" value="#cdca27" />
             <input type="range" class="input-color-opacity-slider" title="Opacity" data-id="dp-color" name="dp-color-opacity" value="1" min="0" max="1" step="0.05" />
-            <label for="dp_n-color">North</label>
+          </div>
+          <div class="color-selector">
+            <label for="dp_n-color">DP North</label>
             <input class="input-color-picker" name="dp_n-color" type="color" data-id="dp_n-color" value="#00eaff" />
             <input type="range" class="input-color-opacity-slider" title="Opacity" data-id="dp_n-color" name="dp_n-color-opacity" value="1" min="0" max="1" step="0.05" />
           </div>

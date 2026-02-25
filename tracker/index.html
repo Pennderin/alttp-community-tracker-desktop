@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>ALTTP Randomizer Community Tracker - Launcher</title>
+    <title>ALTTPR PO Tracker</title>
     <script type="text/javascript" src="js/jquery-3.3.1.js?v=20260131"></script>
     <script type="text/javascript" src="js/jquery.powertip.js?v=20260131"></script>
     <script type="text/javascript" src="js/select2.min.js?v=20260131"></script>
@@ -16,17 +16,13 @@
     <link href="css/fonts.css?v=20260131" rel="stylesheet" />
     <link href="css/sprites.css?v=20260131" rel="stylesheet" />
     <link href="css/toast.css?v=20260131" rel="stylesheet" />
+    <link href="css/po-theme.css?v=20260131" rel="stylesheet" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png" />
-    <style>
-      a {
-        color: red;
-      }
-    </style>
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
         load_cookie();
@@ -36,30 +32,14 @@
     </script>
   </head>
 
-  <body>    
+  <body>
+    <div class="po-header">
+      <img src="./images/po-banner.png" class="po-header-banner" alt="ALTTPR PO Tracker" />
+    </div>
     <div class="outer-wrapper">
       <div>
-        <div class="header-main-div">
-          <a href="./index.html"><img src="./images/overlay/header.png" class="header-main-img" /></a>
-          <div id="headerTextElement" class="header-news-div"></div>
-        </div>
-        <div class="header-links">
-          <a href="./release.html">
-            <div class="header-link-img"><span class="header-text-span">Release Notes</span></div>
-          </a>
-          <a href="./instructions.html">
-            <div class="header-link-img"><span class="header-text-span">Instructions</span></div>
-          </a>
-          <a href="./issues.html">
-            <div class="header-link-img"><span class="header-text-span">Known Issues</span></div>
-          </a>
-          <a href="./contributors.html">
-            <div class="header-link-img"><span class="header-text-span">Contributors</span></div>
-          </a>
-          <a href="./downloads.html">
-            <div class="header-link-img"><span class="header-text-span">Downloads</span></div>
-          </a>
-        </div>
+        <div class="header-main-div"></div>
+        <div class="header-links"></div>
       </div>
       <div class="main-wrapper">
         <div class="preset-div">
@@ -160,21 +140,19 @@
           <div id="gameplaydiv" style="display: none">
             <div>
               <span class="preset-span-double"> World State: </span>
-              <span class="preset-span">
+              <span class="preset-btn-span">
+                <select id="worldstateselect" class="sprite-dropdown" style="width: 200px !important;" onchange="syncWorldStateRadio()">
+                  <option value="O">Open</option>
+                  <option value="S">Standard</option>
+                  <option value="I">Inverted</option>
+                  <option value="R">Retro</option>
+                </select>
+              </span>
+              <span style="display:none">
                 <input id="gametypeopen" value="O" type="radio" name="gametypegroup" checked />
-                <label for="gametypeopen">Open</label>
-              </span>
-              <span class="preset-span">
                 <input id="gametypestandard" value="S" type="radio" name="gametypegroup" />
-                <label for="gametypestandard">Standard</label>
-              </span>
-              <span class="preset-span">
                 <input id="gametypeinverted" value="I" type="radio" name="gametypegroup" />
-                <label for="gametypeinverted">Inverted</label>
-              </span>
-              <span class="preset-span">
                 <input id="gametyperetro" value="R" type="radio" name="gametypegroup" />
-                <label for="gametyperetro">Retro</label>
               </span>
             </div>
             <div>
@@ -431,34 +409,26 @@
           <div id="goaldiv" style="display: none">
             <div>
               <span class="preset-span-double"> Goal: </span>
-              <span class="preset-span">
+              <span class="preset-btn-span">
+                <select id="goalselect" class="sprite-dropdown" style="width: 200px !important;" onchange="syncGoalRadio()">
+                  <option value="G">Ganon</option>
+                  <option value="F">Fast Ganon</option>
+                  <option value="A">All Dungeons</option>
+                  <option value="P">Pedestal</option>
+                  <option value="T">Triforce Hunt</option>
+                  <option value="H">Ganonhunt</option>
+                  <option value="O">Other</option>
+                </select>
+              </span>
+              <!-- Hidden radios for JS compatibility -->
+              <span style="display:none">
                 <input id="goalganon" value="G" type="radio" name="goalgroup" checked />
-                <label for="goalganon">Ganon</label>
-              </span>
-              <span class="preset-span">
                 <input id="goalfast" value="F" type="radio" name="goalgroup" />
-                <label for="goalfast">Fast Ganon</label>
-              </span>
-              <span class="preset-span">
                 <input id="goaldungeons" value="A" type="radio" name="goalgroup" />
-                <label for="goaldungeons">All Dungeons</label>
-              </span>
-              <span class="preset-span">
                 <input id="goalpedestal" value="P" type="radio" name="goalgroup" />
-                <label for="goalpedestal">Pedestal</label>
-              </span>
-              <span class="preset-span-double"> </span>
-              <span class="preset-span">
                 <input id="goaltriforcehunt" value="T" type="radio" name="goalgroup" />
-                <label for="goaltriforcehunt">Triforce Hunt</label>
-              </span>
-              <span class="preset-span">
                 <input id="goalganonhunt" value="H" type="radio" name="goalgroup" />
-                <label for="goalganonhunt">Ganonhunt</label>
-              </span>
-              <span class="preset-span">
                 <input id="goalother" value="O" type="radio" name="goalgroup" />
-                <label for="goalother">Other</label>
               </span>
             </div>
             <div>
@@ -466,7 +436,7 @@
               <span class="preset-span">
                 <input id="goalcrystal" value="C" type="radio" name="towergroup" checked />
                 <label for="goalcrystal" class="select-label">Crystals</label>
-                <select id="towerselect" style="max-width: 40px">
+                <select id="towerselect" style="width: 55px !important; min-width: 55px;">
                   <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -487,7 +457,7 @@
               <span class="preset-span">
                 <input id="ganoncrystal" value="C" type="radio" name="ganongroup" checked />
                 <label for="ganoncrystal" class="select-label">Crystals</label>
-                <select id="ganonselect" style="max-width: 40px">
+                <select id="ganonselect" style="width: 55px !important; min-width: 55px;">
                   <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -1149,6 +1119,7 @@
                 <label for="scale25">Ant%</label>
               </span>
             </div>
+            <div>
             <span class="preset-span-double">
               Spoiler Log:
               <span
@@ -1181,28 +1152,26 @@
             <span class="preset-span-double">
               Autotracking: <span class="south tooltop-character" title="This will enable the autotracking listener, default on port 23074. Choose 'Yes (No Dungeon Counts)' to disable auto decrementing of dungeon locations.">[?]</span>
             </span>
-            <span class="preset-span">
+            <span class="preset-btn-span">
+              <select id="autotrackingselect" class="sprite-dropdown" style="width: 200px !important;" onchange="syncAutotrackingRadio()">
+                <option value="N">No</option>
+                <option value="Y" selected>Yes</option>
+                <option value="D">Yes (No Dungeon Counts)</option>
+                <option value="E">Yes (Enhanced Tracking)</option>
+              </select>
+            </span>
+            <!-- Hidden radios for JS compatibility -->
+            <span style="display:none">
               <input id="autotrackingno" value="N" type="radio" name="autotrackinggroup" />
-              <label for="autotrackingno">No</label>
-            </span>
-            <span class="preset-span">
               <input id="autotrackingyes" value="Y" type="radio" name="autotrackinggroup" checked />
-              <label for="autotrackingyes">Yes</label>
-            </span>
-            <span class="preset-span-double">
               <input id="autotrackingnodungeon" value="D" type="radio" name="autotrackinggroup" />
-              <label for="autotrackingnodungeon"> Yes (No Dungeon Counts)</label>
-            </span>
-            <span class="preset-span-double">
               <input id="autotrackingenhanced" value="E" type="radio" name="autotrackinggroup" />
-              <label for="autotrackingenhanced"> Yes (Enhanced Tracking) <span class="south tooltop-character" title="This will enable non-race legal (unless otherwise specified) features. Must be manually enabled. Currently includes: OW Mixed Overworld (Tile Flip) autotracking.">[?]</span></label>
             </span>
-            <span class="preset-span-double"></span>
             <span class="preset-span">
               <label for="autotrackingport">Port:</label>
               <input style="width: 50px" id="autotrackingport" value="23074" type="text" />
             </span>
-            <span class="preset-span-double">
+            <span class="preset-span">
               <label for="autotrackinghost">Host:</label>
               <input style="width: 100px" id="autotrackinghost" value="localhost" type="text" />
             </span>
@@ -1232,7 +1201,7 @@
           <div>
             <span class="preset-span" style="min-width: 100%">
               <center>
-                <input type="checkbox" id="remembersettings" /><label for="remembersettings" style="min-width: 184px">Remember Display Settings</label>
+                <input type="checkbox" id="remembersettings" /><label for="remembersettings" style="min-width: 184px">Remember Settings</label>
                 <span class="south tooltop-character" title="This site uses a tracking cookie to remember your settings">[?]</span>
               </center>
             </span>
@@ -1242,8 +1211,54 @@
       <div>
         <div id="snackbar">Settings Applied! Click to launch ==></div>
         <center><button type="button" class="launch preset-btn" style="width: 400px; font-size: 50px" onclick="launch_tracker()">LAUNCH TRACKER</button></center>
+        <div class="po-version-footer">v1.0.0</div>
       </div>
     </div>
+
+    <script>
+      // Sync world state dropdown -> hidden radio buttons
+      function syncWorldStateRadio() {
+        var val = document.getElementById('worldstateselect').value;
+        var radios = document.querySelectorAll('input[name="gametypegroup"]');
+        radios.forEach(function(r) { r.checked = (r.value === val); });
+      }
+
+      function syncWorldStateDropdown() {
+        var checked = document.querySelector('input[name="gametypegroup"]:checked');
+        if (checked) document.getElementById('worldstateselect').value = checked.value;
+      }
+
+      // Sync goal dropdown -> hidden radio buttons
+      function syncGoalRadio() {
+        var val = document.getElementById('goalselect').value;
+        var radios = document.querySelectorAll('input[name="goalgroup"]');
+        radios.forEach(function(r) { r.checked = (r.value === val); });
+      }
+
+      function syncGoalDropdown() {
+        var checked = document.querySelector('input[name="goalgroup"]:checked');
+        if (checked) document.getElementById('goalselect').value = checked.value;
+      }
+
+      function syncAutotrackingRadio() {
+        var val = document.getElementById('autotrackingselect').value;
+        var radios = document.querySelectorAll('input[name="autotrackinggroup"]');
+        radios.forEach(function(r) { r.checked = (r.value === val); });
+      }
+
+      function syncAutotrackingDropdown() {
+        var checked = document.querySelector('input[name="autotrackinggroup"]:checked');
+        if (checked) document.getElementById('autotrackingselect').value = checked.value;
+      }
+
+      setInterval(function() {
+        syncGoalDropdown();
+        syncAutotrackingDropdown();
+        syncWorldStateDropdown();
+      }, 300);
+
+      // No CSS zoom - scaling handled by Electron webContents.setZoomFactor
+    </script>
   </body>
   <script>
       document.getElementById("autotrackinghost").addEventListener("input", function () {
